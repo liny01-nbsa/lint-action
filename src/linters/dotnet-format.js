@@ -27,7 +27,7 @@ class DotnetFormat {
 
 		// Verify that dotnet-format is installed
 		try {
-			run(`${prefix} dotnet format --version`, { dir });
+			run(`${prefix} dotnet-format --version`, { dir });
 		} catch (err) {
 			throw new Error(`${this.name} is not installed`);
 		}
@@ -48,7 +48,7 @@ class DotnetFormat {
 		}
 
 		const fixArg = fix ? "" : "--verify-no-changes";
-		return run(`${prefix} dotnet format ${fixArg} ${args}`, {
+		return run(`${prefix} dotnet-format ${fixArg} ${args}`, {
 			dir,
 			ignoreErrors: true,
 		});
